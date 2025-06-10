@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <style>
+      body {
+         display: flex;
+         background-color: gray;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+      }
+
+      :root {
+         --accent-color: #e63946;
+      }
+
+      /*  .pulsating-play-btn {
+         width: 94px;
+         height: 94px;
+         background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+         background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+         border-radius: 50%;
+         display: block;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .pulsating-play-btn:before {
+         content: "";
+         position: absolute;
+         z-index: ;
+         width: 120px;
+         height: 120px;
+         animation-delay: 0s;
+         animation: pulsate-play-btn 2s;
+         animation-direction: forwards;
+         animation-iteration-count: infinite;
+         animation-timing-function: steps;
+         opacity: 1;
+         border-radius: 50%;
+         border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+         top: -15%;
+         left: -15%;
+         background: rgba(198, 16, 0, 0);
+      }
+
+      .pulsating-play-btn:after {
+         content: "";
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translateX(-40%) translateY(-50%);
+         width: 0;
+         height: 0;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         border-left: 15px solid #fff;
+         z-index: 100;
+         transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+
+      .pulsating-play-btn:hover:before {
+         content: "";
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translateX(-40%) translateY(-50%);
+         width: 0;
+         height: 0;
+         border: none;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         border-left: 15px solid #fff;
+         z-index: 200;
+         animation: none;
+         border-radius: 0;
+      }
+
+      .pulsating-play-btn:hover:after {
+         border-left: 15px solid var(--accent-color);
+         transform: scale(20);
+      }
+
+      @keyframes pulsate-play-btn {
+         0% {
+            transform: scale(0.6, 0.6);
+            opacity: 1;
+         }
+
+         100% {
+            transform: scale(1, 1);
+            opacity: 0;
+         }
+      }
+
+
+      @keyframes pulsate-play-btn {
+         0% {
+            transform: scale(0.6);
+            opacity: 1;
+         }
+
+         100% {
+            transform: scale(1);
+            opacity: 0;
+         }
+      }
+
+      .about .pulsating-play-btn {
+         position: absolute;
+         left: calc(50% - 47px);
+         top: calc(50% - 47px);
+      }
+
+      a {
+         color: var(--accent-color);
+         text-decoration: none;
+         transition: 0.3s;
+      } */
+
+      .pulsating-play-btn {
+         width: 100px;
+         aspect-ratio: 1/1;
+         background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+         border-radius: 50%;
+         z-index: 1;
+         position: relative;
+         overflow: hidden;
+      }
+
+      /* after for triangle */
+      .pulsating-play-btn::after {
+         content: "";
+         /* width: 100px; */
+         /* height: 100px; */
+         z-index: 5;
+         transform: translate(-40%, -50%);
+         /* background-color: blue; */
+         border-left: 15px solid white;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transition: 0.3s;
+      }
+
+      .pulsating-play-btn:hover::after {
+         transform: scale(15);
+         border-left: 36px solid var(--accent-color);
+      }
+
+      .pulsating-play-btn::before {
+         content: "";
+         width: 120px;
+         height: 120px;
+         border-radius: 50%;
+         top: 50%;
+         left: 50%;
+         top: -15%;
+         left: -15%;
+         transform: translate(-50%, -50%);
+         /* background-color: aqua; */
+         position: absolute;
+         z-index: 2;
+         border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+         animation: pulse 2s infinite;
+
+      }
+
+      /* on hover the before becomes the white triangle */
+      .pulsating-play-btn:hover::before {
+         content: "";
+         width: 0;
+         height: 0;
+         border-radius: 0%;
+         z-index: 99;
+         transform: translate(-40%, -50%);
+         /* background-color: blue; */
+         border-left: 15px solid white;
+         border-top: 10px solid transparent;
+         border-bottom: 10px solid transparent;
+         border-right: none;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         /* transition: 0.3s; */
+         animation: none
+      }
+
+      @keyframes pulse {
+         0% {
+            transform: scale(0.6);
+            opacity: 1;
+         }
+
+         100% {
+            transform: scale(1);
+            opacity: 0;
+
+         }
+
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Working Button -->
+   <a href="#" class="pulsating-play-btn"></a>
+</body>
+
+</html>
